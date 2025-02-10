@@ -2,7 +2,7 @@ package Enemyes;
 
 import java.util.List;
 
-public class Enemies implements StoringEnemies {
+public class Enemies implements EnemyManager {
     private List<Enemy> enemies;
 
 
@@ -21,6 +21,12 @@ public class Enemies implements StoringEnemies {
     public List<Enemy> removeEnemy(Enemy enemy) {
         enemies.remove(enemy);
 
+        return enemies ;
+    }
+
+    @Override
+    public List<Enemy> removeEnemies() {
+        enemies.removeAll(enemies);
         return enemies ;
     }
 }

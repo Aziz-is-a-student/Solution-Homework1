@@ -1,5 +1,6 @@
 package Player;
 
+import items.Inventory;
 import items.Item;
 
 import java.util.List;
@@ -8,9 +9,9 @@ public class Player {
     private String playerName;
     private int playerHealth;
     private int playerExperience;
-    private List<Item> inventory;
+    private Inventory inventory;
 
-    public Player(String playerName, int playerHealth, int playerExperience ,List<Item> inventory) {
+    public Player(String playerName, int playerHealth, int playerExperience ,Inventory inventory) {
         this.playerName = playerName;
         this.playerHealth = playerHealth;
         this.playerExperience = playerExperience;
