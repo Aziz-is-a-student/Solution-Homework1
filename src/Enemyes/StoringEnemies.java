@@ -3,5 +3,6 @@ package Enemyes;
 import java.util.List;
 
 public interface StoringEnemies {
-        List addEnemies(Enemies enemy);
+        List <Enemy> addEnemies(Enemy enemy);
+        List<Enemy> removeEnemy(Enemy enemy);
 }

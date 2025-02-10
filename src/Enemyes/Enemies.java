@@ -3,19 +3,24 @@ package Enemyes;
 import java.util.List;
 
 public class Enemies implements StoringEnemies {
-    private List<Enemies> enemies;
-    int experience;
-    int damage;
+    private List<Enemy> enemies;
 
-    public Enemies(List<Enemies> enemies, int experience, int damage) {
+
+    public Enemies(List<Enemy> enemies) {
         this.enemies = enemies;
-        this.experience = experience;
-        this.damage = damage;
     }
 
     @Override
-    public List addEnemies(Enemies enemy) {
+    public List<Enemy> addEnemies(Enemy enemy) {
         enemies.add(enemy);
+        return enemies ;
+
+    }
+
+    @Override
+    public List<Enemy> removeEnemy(Enemy enemy) {
+        enemies.remove(enemy);
+
         return enemies ;
     }
 }

@@ -1,5 +1,7 @@
 package combat;
 
+import Enemyes.Enemy;
+
 public interface fightEnemy {
-    void fight(String enemy);
+    void fight(Enemy enemy);
 }

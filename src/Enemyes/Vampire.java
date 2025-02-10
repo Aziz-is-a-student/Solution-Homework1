@@ -2,10 +2,10 @@ package Enemyes;
 
 import java.util.List;
 
-public class Vampire extends  Enemies {
+public class Vampire extends  Enemy {
 
 
-    public Vampire(List<Enemies> enemies, int experience, int damage) {
-        super(enemies, experience, damage);
+    public Vampire(int experience, int damage) {
+        super(experience, damage);
     }
 }
