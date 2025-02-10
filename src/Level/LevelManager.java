@@ -16,14 +16,14 @@ public class LevelManager implements  initLevel {
     private Enemies enemies;
     private ItemManager itemManager;
     private Player player;
-    private Enemy enemy;
+
 
     public LevelManager(Player player, Enemies enemies, ItemManager itemManager,Enemy enemy) {
         this.level = 1; // Начальный уровень
         this.player = player;
         this.enemies = enemies;
         this.itemManager = itemManager;
-        this.enemy = enemy
+
 
     }
 
