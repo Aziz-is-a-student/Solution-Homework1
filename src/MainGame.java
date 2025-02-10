@@ -2,12 +2,15 @@
 import Player.Player;
 import Enemyes.Enemy;
 import Enemyes.Enemies;
+import items.Inventory;
 import items.Item;
 import items.ItemManager;
 import Level.LevelManager;
 import Level.ScoreManager;
 import combat.CombatManager;
+import items.Items;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainGame {
@@ -42,7 +45,9 @@ public class MainGame {
             while (!itemManager.isEmpty() && player.getPlayerHealth() > 0) {
                 itemManager.pickUpItem(itemManager.display(0));
             }
-
+            if (level == 3) {
+                break;
+            }
 
             if (player.getPlayerHealth() > 0 && level < 3) {
                 levelManager.advanceLevel();
@@ -61,15 +66,14 @@ public class MainGame {
 
 
     public static void main(String[] args) {
-        // Создаем игрока и другие необходимые объекты
-        Player player = new Player("Hero", 100, 0, new items.Inventory(new java.util.ArrayList<>()));
-        Enemies enemies = new Enemies(new java.util.ArrayList<>());
-        ItemManager itemManager = new ItemManager(player, null, new items.Items(new java.util.ArrayList<>()), new items.Inventory(new java.util.ArrayList<>()));
+        Player player = new Player("Hero", 100, 0, new Inventory(new ArrayList<>()));
+        Enemies enemies = new Enemies(new ArrayList<>());
+        Items items = new Items(new ArrayList<>());
+        ItemManager itemManager = new ItemManager(player, null, items, new Inventory(new ArrayList<>()));
         ScoreManager scoreManager = new ScoreManager();
         LevelManager levelManager = new LevelManager(player, enemies, itemManager, scoreManager);
-        CombatManager combatManager = new CombatManager(null, player, enemies);
+        CombatManager combatManager = new CombatManager(player, enemies);
 
-        // Запускаем игру
         MainGame game = new MainGame(player, enemies, itemManager, levelManager, scoreManager, combatManager);
         game.playGame();
     }

@@ -5,10 +5,7 @@ import Enemyes.Enemy;
 import Enemyes.EnemyManager;
 import Enemyes.Vampire;
 import Player.Player;
-import items.GoldCoin;
-import items.HealthElexir;
-import items.Item;
-import items.ItemManager;
+import items.*;
 import Enemyes.*;
 
 
@@ -34,26 +31,23 @@ public class LevelManager implements  initLevel {
     public void advanceLevel() {
         System.out.println("Advancing to next level...");
         level++;
-        player.setPlayerHealth(100); // Reset health at the beginning of a new level
+        player.setPlayerHealth(100);
 
-        // Clear previous enemies and items, then add new ones for the new level.
         enemies.removeEnemies();
         itemManager.clear();
-        //items.;
+
         if (level == 2) {
-            enemies.addEnemies(new Enemy(21,14));
-            itemManager.addItem(new GoldCoin(21));
+            enemies.addEnemies(new Skeleton(20, 10));
+            itemManager.addItem(new GoldCoin(5));
         } else if (level == 3) {
-            enemies.addEnemies(new Enemy(25,19));
-            enemies.addEnemies(new Zombie(21,22));
-            itemManager.addItem(new GoldCoin(21));
-            itemManager.addItem(new HealthElexir(21));
-            }
+            enemies.addEnemies(new Vampire(50, 25));
+            enemies.addEnemies(new Zombie(30, 15));
+            itemManager.addItem(new MagicScroll(15));
+            itemManager.addItem(new HealthElexir(20));
+        }
 
         scoreManager.addPoints(100 * level);
-
         System.out.println("Reached level " + level);
         System.out.println("Current Score: " + scoreManager.getScore());
-
     }
 }
