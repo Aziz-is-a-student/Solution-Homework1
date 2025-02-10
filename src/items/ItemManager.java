@@ -4,7 +4,7 @@ import Player.Player;
 
 import java.util.List;
 
-public class ItemManager implements PickUpItem,StoringItems {
+public class ItemManager implements PickUpItem,StoringItems,isEmpty,getItem {
     private  Player player;
     private  Item item;
     private  Items items;
@@ -52,4 +52,17 @@ public class ItemManager implements PickUpItem,StoringItems {
         System.out.println("Inventory now: " + inventory);
     }
 
+    public Items getItems() {
+        return items;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return items.getItems().isEmpty();
+    }
+
+    @Override
+    public Item display(int index) {
+       return items.getItems().get(index);
+    }
 }

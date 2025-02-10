@@ -10,10 +10,10 @@ public class CombatManager implements fightEnemy {
     private Player player;
     private  Enemies enemies;
 
-    public CombatManager(Enemy enemy, Player player, Enemies enemies) {
+    public CombatManager( Player player, Enemies enemies) {
         this.enemy = enemy;
         this.player = player;
-        this.enemies = enemies;
+
     }
 
     @Override

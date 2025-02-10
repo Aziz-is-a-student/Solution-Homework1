@@ -29,4 +29,8 @@ public class Enemies implements EnemyManager {
         enemies.removeAll(enemies);
         return enemies ;
     }
+
+    public List<Enemy> getEnemies() {
+        return enemies;
+    }
 }

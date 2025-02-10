@@ -11,18 +11,21 @@ import items.Item;
 import items.ItemManager;
 import Enemyes.*;
 
+
 public class LevelManager implements  initLevel {
     private int level;
     private Enemies enemies;
     private ItemManager itemManager;
     private Player player;
+    private ScoreManager scoreManager;
 
 
-    public LevelManager(Player player, Enemies enemies, ItemManager itemManager,Enemy enemy) {
+    public LevelManager(Player player, Enemies enemies, ItemManager itemManager,ScoreManager scoreManager) {
         this.level = 1; // Начальный уровень
         this.player = player;
         this.enemies = enemies;
         this.itemManager = itemManager;
+        this.scoreManager = scoreManager;
 
 
     }
@@ -46,6 +49,11 @@ public class LevelManager implements  initLevel {
             itemManager.addItem(new GoldCoin(21));
             itemManager.addItem(new HealthElexir(21));
             }
+
+        scoreManager.addPoints(100 * level);
+
         System.out.println("Reached level " + level);
+        System.out.println("Current Score: " + scoreManager.getScore());
+
     }
 }
