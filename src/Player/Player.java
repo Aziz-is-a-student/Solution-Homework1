@@ -1,18 +1,20 @@
 package Player;
 
+import items.Item;
+
 import java.util.List;
 
 public class Player {
     private String playerName;
     private int playerHealth;
     private int playerExperience;
-    //private List<String> inventory;
+    private List<Item> inventory;
 
-    public Player(String playerName, int playerHealth, int playerExperience/* ,List<String> inventory*/) {
+    public Player(String playerName, int playerHealth, int playerExperience ,List<Item> inventory) {
         this.playerName = playerName;
         this.playerHealth = playerHealth;
         this.playerExperience = playerExperience;
-        //this.inventory = inventory;
+        this.inventory = inventory;
     }
 
     public String getPlayerName() {

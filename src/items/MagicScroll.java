@@ -1,9 +1,7 @@
 package items;
 
-public class MagicScroll {
-    int experience ;
-
+public class MagicScroll extends Item {
     public MagicScroll(int experience) {
-        this.experience = experience;
+        super(experience, 0);
     }
 }
